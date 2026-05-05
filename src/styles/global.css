@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        @apply text-red-500;
+        /* Tak używamy Tailwinda w CSS */
+        /* ALBO klasycznie: */
+        color: red;
+    }
+}

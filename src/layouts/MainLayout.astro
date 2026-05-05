@@ -1,0 +1,48 @@
+---
+// src/layouts/MainLayout.astro
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import '../styles/global.css';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { title } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title || t('welcome')}</title>
+  </head>
+  <body class="bg-slate-50 min-h-screen text-slate-900">
+    
+    <nav class="bg-white border-b p-4 shadow-sm">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <!-- Lewa strona: Nawigacja i Języki -->
+        <div class="flex gap-4 items-center font-medium">
+            Welcome
+        </div>
+
+        <!-- Prawa strona: Pusta lub logo -->
+        <div class="text-xs text-slate-400 uppercase tracking-widest">
+                   <div class="flex gap-3">
+            <a href="/" >EN</a>
+            <a href="/pl/" >PL</a>
+            <a href="/de/" >DE</a>
+            <a href="/ru/" >RU</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto p-8 lg:py-16">
+      <article class="prose prose-slate max-w-none">
+        <slot /> <!-- Tutaj wpadnie Twoja treść tekstowa -->
+      </article>
+    </main>
+
+    <footer class="text-center py-10 border-t border-slate-200 text-gray-400 text-xs">
+      &copy; 2026 Multi-language Project
+    </footer>
+  </body>
+</html>
