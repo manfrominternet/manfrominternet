@@ -4,9 +4,13 @@ title: "O mnie - Jan Kowalski"
 
 # O mnie
 
-Cześć! Jestem pasjonatem technologii i podróżnikiem. Tutaj znajdziesz informacje o tym, czym się zajmuję.
-
-## Moje cele
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 not-prose items-center">
+  <div>
+    <h2>Moje Cele</h2>
+    <p>Chcę się nauczyć Astro, żeby tworzyć ultra szybkie strony...</p>
+  </div>
+  <img src="/images/programmer-grinding.png" class="rounded-xl shadow-md" />
+</div>
 
 * **Rozwój osobisty:** Nauka Astro i nowoczesnych frameworków.
 * **Projekty:** Chcę zbudować 5 w pełni funkcjonalnych stron w tym roku.

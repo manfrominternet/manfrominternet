@@ -1,48 +1,72 @@
 ---
-// src/layouts/MainLayout.astro
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const { title, headings } = Astro.props;
 import '../styles/global.css';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const { title } = Astro.props;
+import SkillBar from '../components/SkillBar.astro';
 ---
-
-<html lang={lang}>
+<html lang="pl" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title || t('welcome')}</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
   </head>
-  <body class="bg-slate-50 min-h-screen text-slate-900">
-    
-    <nav class="bg-white border-b p-4 shadow-sm">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Lewa strona: Nawigacja i Języki -->
-        <div class="flex gap-4 items-center font-medium">
-            Welcome
-        </div>
-
-        <!-- Prawa strona: Pusta lub logo -->
-        <div class="text-xs text-slate-400 uppercase tracking-widest">
-                   <div class="flex gap-3">
-            <a href="/" >EN</a>
-            <a href="/pl/" >PL</a>
-            <a href="/de/" >DE</a>
-            <a href="/ru/" >RU</a>
-          </div>
+  <body class="bg-white text-slate-900">
+    <!-- Nawigacja -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-black tracking-tighter text-blue-600">PORTFOLIO.</a>
+        <div class="flex gap-6 font-bold text-sm">
+          <a href="/pl/" class="hover:text-blue-600">PL</a>
+          <a href="/de/" class="hover:text-blue-600">DE</a>
+          <a href="/" class="hover:text-blue-600">EN</a>
+          <a href="/ru/" class="hover:text-blue-600">RU</a>
         </div>
       </div>
     </nav>
-    
-    <main class="max-w-4xl mx-auto p-8 lg:py-16">
-      <article class="prose prose-slate max-w-none">
-        <slot /> <!-- Tutaj wpadnie Twoja treść tekstowa -->
-      </article>
-    </main>
 
-    <footer class="text-center py-10 border-t border-slate-200 text-gray-400 text-xs">
-      &copy; 2026 Multi-language Project
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
+      <!-- Spis Treści (TOC) -->
+      <aside class="hidden lg:block w-64 pt-20">
+        <div class="sticky top-32 space-y-4">
+          <p class="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Nawigacja</p>
+          <ul class="space-y-4 border-l-2 border-slate-100 pl-6">
+            {headings?.map((h: any) => (
+              <li>
+                <a href={`#${h.slug}`} class="text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors block">
+                  {h.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Główna Treść -->
+      <main class="flex-1">
+        <slot />
+        <section id="tech-stack" class="py-24 mt-20 border-t-2 border-slate-50">
+          <div class="mb-16">
+            <h2 class="text-3xl font-black text-slate-900 mb-2">Technical Skills</h2>
+            <p class="text-blue-600 font-bold text-sm uppercase tracking-widest">Expertise & Tools</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+            <div class="space-y-6">
+              <SkillBar name="Astro 5.0" level="95%" color="bg-orange-500" />
+              <SkillBar name="TypeScript" level="85%" color="bg-blue-500" />
+              <SkillBar name="Tailwind CSS" level="98%" color="bg-cyan-400" />
+            </div>
+            <div class="space-y-6">
+              <SkillBar name="Node.js & Express" level="70%" color="bg-green-600" />
+              <SkillBar name="GitHub / CI/CD" level="80%" color="bg-slate-800" />
+              <SkillBar name="UI Design (Figma)" level="75%" color="bg-purple-500" />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="py-20 text-center text-slate-400 text-sm border-t mt-20">
+      &copy; 2026 manfrominternet, Zbudowano w Astro 5.
     </footer>
   </body>
 </html>

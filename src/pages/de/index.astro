@@ -1,16 +1,66 @@
 ---
 import { getEntry, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import PuzzleSection from '../../components/PuzzleSection.astro';
+import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
 
-// Pobieramy dane
-const entry = await getEntry('docs', 'pl');
-
+const entry = await getEntry('docs', 'de');
 if (!entry) return Astro.redirect('/404');
-
-// W Astro 5 używamy render jako osobnej funkcji
 const { Content, headings } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
-  <Content />
+  
+  <PuzzleSection title="O mnie" image="/images/programmer-grinding.png">
+    <p>
+Meine ersten Schritte in der IT habe ich bereits im Jahr 2018 gemacht... aber zuerst ein paar Worte über mich, damit du ein Gefühl dafür bekommst, wer ich bin.
+
+Seit meiner Kindheit interessiere ich mich für Fremdsprachen, Schach und einen gesunden Lebensstil. Ich habe den Eindruck, dass die dahinterstehende Neugier im Grunde der Wunsch ist, zu lernen und zu optimieren. Ich habe einige Erfolge im Schach erzielt und schaffe es trotz sitzender Tätigkeit, einen gesunden Lebensstil beizubehalten.
+
+Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben motivieren mich und ich nehme sie gerne an. Ich bin kreativ und kann selbstständig arbeiten. Ich interessiere mich für IT — vom Backend über DevOps bis hin zum Frontend — und Themen rund um KI sind mir vertraut. Ich entwickle mich in all diesen Bereichen engagiert weiter, was meine Projekte auf GitHub zeigen.
+    </p>
+  </PuzzleSection>
+
+  <PuzzleSection title="Moje cele" image="/images/programmer-grinding.png" reverse={true}>
+<p>
+  Im Leben setze ich auf Präzision. Ich konzentriere mich auf ausgewählte Technologien, die ich für besonders wertvoll und zugleich zukunftsorientiert halte.
+</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li>Tiefgehendes Verständnis und sichere Anwendung von Kubernetes und Terraform</li>
+  <li>Leistungsfähiges, schlankes und durchdachtes Frontend</li>
+  <li>Backend und Datenbank passend zu den realen Anforderungen gewählt</li>
+  <li>Entwicklung praktischer und nützlicher Online-Produkte</li>
+</ul>
+  </PuzzleSection>
+
+  <PuzzleSection title="Doświadczenie" image="/images/programmer-grinding.png">
+    <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
+    <div class="mt-6">
+  <TimelineItem 
+  date="2026[Oktober] - heute"
+  title="DevOps (mit Deutsch)"
+  company="Capgemini"
+  description="Arbeit in einem Projekt"
+/>
+<TimelineItem 
+  date="2025[Oktober] - 2026[März]"
+  title="DevOps Praktikum"
+  company="Capgemini"
+  description="Vorbereitung durch Capgemini auf zukünftige DevOps-Projekte"
+/>
+<TimelineItem 
+  date="2025[März] - 2025[September]"
+  title="Fullstack Developer"
+  company="Freelance"
+  description="Entwicklung eines MVP — einer Recruiting-Plattform mit Quizzen für Kandidaten"
+/>
+<TimelineItem 
+  date="2022[Mai] - 2024[April]"
+  title="Frontend Developer"
+  company="Thales"
+  description="Entwicklung einer GUI mit Next.js und Tauri"
+/>
+    </div>
+  </PuzzleSection>
+
 </MainLayout>

@@ -1,16 +1,66 @@
 ---
 import { getEntry, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import PuzzleSection from '../../components/PuzzleSection.astro';
+import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
 
-// Pobieramy dane
 const entry = await getEntry('docs', 'pl');
-
 if (!entry) return Astro.redirect('/404');
-
-// W Astro 5 używamy render jako osobnej funkcji
 const { Content, headings } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
-  <Content />
+  
+  <PuzzleSection title="O mnie" image="/images/programmer-grinding.png">
+    <p>
+Pierwsze kroki w IT zacząłem stawiać już w 2018 roku... ale najpierw trochę o mnie, żebyśmy poczuli, że już trochę się znamy i że nadajemy na tych samych falach.
+
+Od dzieciństwa wykazywałem zainteresowanie językami obcymi, szachami oraz zdrowym trybem życia. Mam wrażenie, że ciekawość, która za tym stoi, to tak naprawdę chęć poznawania i optymalizacji. Osiągnąłem kilka sukcesów w szachach, a w obszarze zdrowego trybu życia — mimo siedzącej pracy — również radzę sobie dobrze.
+
+Jestem osobą otwartą, pewną siebie i ambitną; motywują mnie trudne zadania i chętnie się ich podejmuję. Jestem kreatywny i potrafię pracować samodzielnie. Interesuję się IT — od backendu, przez DevOps, po frontend — a tematyka AI nie jest mi obca. Z zaangażowaniem rozwijam się w każdym z tych obszarów, o czym świadczą moje projekty na GitHub.
+    </p>
+  </PuzzleSection>
+
+  <PuzzleSection title="Moje cele" image="/images/programmer-grinding.png" reverse={true}>
+    <p>
+  W życiu stawiam na precyzję. Skupiam się na nauce wybranych technologii, które uważam za najbardziej wartościowe, a jednocześnie świeże i przyszłościowe.
+</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li>Głębokie zrozumienie i biegłość w Kubernetes oraz Terraform</li>
+  <li>Wydajny, lekki i dopracowany frontend</li>
+  <li>Backend i baza danych dobrze dopasowane do realnych potrzeb</li>
+  <li>Tworzenie praktycznych, użytecznych produktów online</li>
+</ul>
+  </PuzzleSection>
+
+  <PuzzleSection title="Doświadczenie" image="/images/programmer-grinding.png">
+    <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
+    <div class="mt-6">
+        <TimelineItem 
+        date="2026[październik] - obecnie"
+        title="DevOps z językiem niemieckim"
+        company="Capgemini"
+        description="Praca w projekcie"
+        />
+        <TimelineItem 
+        date="2025[październik] - 2026[marzec]"
+        title="Staż DevOps"
+        company="Capgemini"
+        description="Przygotowanie przez Capgemini do przyszłych projektów jako DevOps"
+        />
+        <TimelineItem 
+        date="2025[marzec] - 2025[wrzesień]"
+        title="Fullstack Developer"
+        company="Freelance"
+        description="Budowa MVP — platformy rekrutacyjnej wraz z quizami dla kandydatów"
+        />
+        <TimelineItem 
+        date="2022[maj] - 2024[kwiecień]"
+        title="Frontend Developer"
+        company="Thales"
+        description="Budowa GUI z użyciem NextJS i Tauri"
+        />
+    </div>
+  </PuzzleSection>
+
 </MainLayout>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  reverse?: boolean;
+}
+
+const { title, image, reverse = false } = Astro.props;
+const id = title.toLowerCase().replace(/\s+/g, '-');
+---
+
+<section id={id} class="py-20 first:pt-10">
+  <div class={`flex flex-col gap-12 lg:gap-24 items-center ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+    
+<!-- Kolumna Tekstowa -->
+    <div class="flex-1 space-y-6 text-justify"> <!-- Dodano text-justify -->
+      <div class="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-widest">
+        Rozdział
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-left"> <!-- Tytuły lepiej zostawić do lewej -->
+        {title}
+      </h2>
+      <div class="prose prose-slate prose-lg max-w-none text-slate-600 text-justify"> <!-- Justowanie treści slotu -->
+        <slot />
+      </div>
+    </div>
+
+    <!-- Kolumna Obrazka -->
+    <div class="flex-1 w-full flex justify-center items-center"> <!-- Dodano wyśrodkowanie wewnątrz kolumny -->
+      <div class="relative group w-full max-w-lg lg:max-w-none mx-auto"> <!-- mx-auto i ograniczenie szerokości dla balansu -->
+        <div class="absolute -inset-4 bg-gradient-to-tr from-blue-200 to-indigo-100 rounded-[3rem] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+          <img 
+            src={image} 
+            alt={title} 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

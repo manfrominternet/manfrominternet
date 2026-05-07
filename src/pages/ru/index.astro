@@ -1,16 +1,66 @@
 ---
 import { getEntry, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import PuzzleSection from '../../components/PuzzleSection.astro';
+import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
 
-// Pobieramy dane
-const entry = await getEntry('docs', 'pl');
-
+const entry = await getEntry('docs', 'ru');
 if (!entry) return Astro.redirect('/404');
-
-// W Astro 5 używamy render jako osobnej funkcji
 const { Content, headings } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
-  <Content />
+  
+  <PuzzleSection title="O mnie" image="/images/programmer-grinding.png">
+    <p>
+Первые шаги в IT я начал делать уже в 2018 году... но сначала немного обо мне, чтобы ты мог лучше понять, какой я человек.
+
+С детства я проявлял интерес к иностранным языкам, шахматам и здоровому образу жизни. Мне кажется, что за этим стоит стремление к познанию и оптимизации. Я добился нескольких успехов в шахматах, а также поддерживаю здоровый образ жизни, несмотря на сидячую работу.
+
+Я открытый, уверенный в себе и амбициозный человек; меня мотивируют сложные задачи, и я охотно за них берусь. Я креативен и умею работать самостоятельно. Я интересуюсь IT — от backend через DevOps до frontend — и темы, связанные с AI, мне хорошо знакомы. Я активно развиваюсь во всех этих направлениях, что подтверждают мои проекты на GitHub.
+    </p>
+  </PuzzleSection>
+
+  <PuzzleSection title="Moje cele" image="/images/programmer-grinding.png" reverse={true}>
+<p>
+  В жизни я делаю ставку на точность. Я сосредотачиваюсь на изучении отобранных технологий, которые считаю наиболее ценными и перспективными.
+</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li>Глубокое понимание и уверенное владение Kubernetes и Terraform</li>
+  <li>Эффективный, лёгкий и продуманный frontend</li>
+  <li>Backend и база данных, подобранные под реальные задачи</li>
+  <li>Создание практичных и полезных онлайн-продуктов</li>
+</ul>
+  </PuzzleSection>
+
+  <PuzzleSection title="Doświadczenie" image="/images/programmer-grinding.png">
+    <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
+    <div class="mt-6">
+<TimelineItem 
+  date="2026[октябрь] - настоящее время"
+  title="DevOps (с немецким языком)"
+  company="Capgemini"
+  description="Работа в проекте"
+/>
+<TimelineItem 
+  date="2025[октябрь] - 2026[март]"
+  title="Стажировка DevOps"
+  company="Capgemini"
+  description="Подготовка компанией Capgemini к будущим DevOps-проектам"
+/>
+<TimelineItem 
+  date="2025[март] - 2025[сентябрь]"
+  title="Fullstack Developer"
+  company="Freelance"
+  description="Разработка MVP — платформы для рекрутинга с квизами для кандидатов"
+/>
+<TimelineItem 
+  date="2022[май] - 2024[апрель]"
+  title="Frontend Developer"
+  company="Thales"
+  description="Разработка GUI с использованием Next.js и Tauri"
+/>
+    </div>
+  </PuzzleSection>
+
 </MainLayout>
