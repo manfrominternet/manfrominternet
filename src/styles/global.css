@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
-@layer base {
-    body {
-        @apply text-red-500;
-        /* Tak używamy Tailwinda w CSS */
-        /* ALBO klasycznie: */
-        color: red;
-    }
+.section-puzzle::after {
+    content: "";
+    position: relative;
+    left: 50%;
+    bottom: -14px;
+    transform: translateX(-50%) rotate(45deg);
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-right: 1px solid rgba(148, 163, 184, 0.4);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    z-index: 10;
+    outline: 2px solid blue;
 }
