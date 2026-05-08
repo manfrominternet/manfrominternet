@@ -12,110 +12,126 @@ const id = title.toLowerCase().replace(/\s+/g, '-');
 
 <section id={id} class="py-24 first:pt-10">
 
- <!-- SPLIT / DEFAULT -->
-{layout === 'split' && (
-  <div
-    class={`grid grid-cols-1 lg:grid-cols-[0.9fr_1.4fr] xl:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-center ${
-      reverse ? 'lg:[&>*:first-child]:order-2' : ''
-    }`}
-  >
+  <!-- SPLIT / DEFAULT -->
+  {layout === 'split' && (
+    <div
+      class={`flex flex-col lg:grid lg:grid-cols-[0.9fr_1.4fr] xl:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-center`}
+    >
 
-    <!-- TEKST -->
-    <div class="flex flex-col justify-center">
+      <!-- TEXT -->
+      <div
+        class={`flex flex-col justify-center items-center text-center lg:text-left
+        lg:items-start max-w-xl mx-auto lg:mx-0
+        ${reverse ? 'lg:order-2' : 'lg:order-1'}`}
+      >
 
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
+          {title}
+        </h2>
 
-      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
-        {title}
-      </h2>
+        <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
+          <slot />
+        </div>
 
-      <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
-        <slot />
       </div>
 
-    </div>
+      <!-- IMAGE -->
+      <div
+        class={`relative flex items-center justify-center w-full
+        ${reverse ? 'lg:order-1' : 'lg:order-2'}`}
+      >
 
-    <!-- OBRAZ -->
-    <div class="relative flex items-center justify-center min-h-[520px]">
-
-      <div class="absolute -inset-10 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20 blur-3xl opacity-60"></div>
-
-      <img
-        src={image}
-        alt={title}
-        class="relative w-full max-w-[580px] h-full object-cover object-center rounded-[2.5rem]"
-      />
-
-    </div>
-
-  </div>
-)}
-
-<!-- STACKED -->
-{layout === 'stacked' && (
-  <div class="flex flex-col gap-12 items-center">
-
-    <!-- TEKST -->
-    <div class="max-w-3xl">
-
-
-      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
-        {title}
-      </h2>
-
-      <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
-        <slot />
-      </div>
-
-    </div>
-
-    <!-- OBRAZ -->
-    <div class="w-full max-w-[720px]">
-      <img
-        src={image}
-        alt={title}
-        class="w-full object-cover object-center rounded-[2.5rem]"
-      />
-    </div>
-
-  </div>
-)}
-
-
-{layout === 'image-heavy' && (
-  <div
-    class={`grid grid-cols-1 lg:grid-cols-[1.4fr_0.9fr] xl:grid-cols-[1.5fr_0.8fr] gap-16 lg:gap-24 items-stretch`}
-  >
-
-    {/* IMAGE — LEWA */}
-    <div class="relative flex items-center justify-center w-full h-full min-h-[420px]">
-
-      <div class="absolute -inset-10 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20 blur-3xl opacity-60"></div>
-
-      <div class="relative w-full max-w-[900px] xl:max-w-[1100px] h-full">
+        <div class="absolute -inset-10 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20 blur-3xl opacity-60"></div>
 
         <img
           src={image}
           alt={title}
-          class="w-full h-full max-h-[460px] object-cover object-center rounded-[2.5rem]"
+          class="relative w-full max-w-[420px] lg:max-w-[580px]
+                 object-cover object-center rounded-[2.5rem] mx-auto"
+        />
+
+      </div>
+
+    </div>
+  )}
+
+  <!-- STACKED -->
+  {layout === 'stacked' && (
+    <div class="flex flex-col gap-12 items-center text-center lg:text-left">
+
+      <!-- TEXT -->
+      <div class="max-w-3xl">
+
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
+          {title}
+        </h2>
+
+        <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
+          <slot />
+        </div>
+
+      </div>
+
+      <!-- IMAGE -->
+      <div class="w-full max-w-[420px] lg:max-w-[720px]">
+        <img
+          src={image}
+          alt={title}
+          class="w-full object-cover object-center rounded-[2.5rem]"
+        />
+      </div>
+
+    </div>
+  )}
+
+<!-- IMAGE HEAVY -->
+{layout === 'image-heavy' && (
+  <div
+    class={`flex flex-col lg:grid lg:grid-cols-[1.4fr_0.9fr] xl:grid-cols-[1.5fr_0.8fr]
+    gap-16 lg:gap-24 items-stretch`}
+  >
+
+    <!-- TEXT FIRST IN DOM -->
+    <div
+      class={`flex flex-col justify-center h-full
+      items-center text-center lg:text-left lg:items-start
+      max-w-xl lg:max-w-md mx-auto lg:mx-0
+      ${reverse ? 'lg:order-2' : 'lg:order-1'}`}
+    >
+
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
+        {title}
+      </h2>
+
+      <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
+        <slot />
+      </div>
+
+    </div>
+
+    <!-- IMAGE SECOND IN DOM -->
+    <div
+      class={`relative flex items-center justify-center w-full h-full
+      min-h-[320px] lg:min-h-[420px]
+      ${reverse ? 'lg:order-1' : 'lg:order-2'}`}
+    >
+
+      <div class="absolute -inset-10 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20 blur-3xl opacity-60"></div>
+
+      <div class="relative w-full max-w-[420px] lg:max-w-[900px] xl:max-w-[1100px] h-full">
+
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full max-h-[320px] lg:max-h-[460px]
+                 object-cover object-center rounded-[2.5rem]"
         />
 
       </div>
 
     </div>
 
-    {/* TEXT — PRAWA (wyrównany wysokością) */}
-    <div class="flex flex-col justify-center h-full max-w-xl lg:max-w-md">
-
-      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-8">
-        {title}
-      </h2>
-
-      <div class="prose prose-slate prose-lg max-w-none text-slate-600 prose-p:leading-8">
-        <slot />
-      </div>
-
-    </div>
-
   </div>
 )}
+
 </section>
