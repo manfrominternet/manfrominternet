@@ -3,15 +3,17 @@ import { getEntry, render } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
 import PuzzleSection from '../../components/PuzzleSection.astro';
 import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
-
-const entry = await getEntry('docs', 'de');
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const entry = await getEntry('docs', 'ru');
 if (!entry) return Astro.redirect('/404');
 const { Content, headings } = await render(entry);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
   
-  <PuzzleSection title="O mnie" image="/images/programmer-grinding.png">
+  <PuzzleSection title={t('about')} image="/images/programmer-grinding.png" layout="stacked">
     <p>
 Meine ersten Schritte in der IT habe ich bereits im Jahr 2018 gemacht... aber zuerst ein paar Worte über mich, damit du ein Gefühl dafür bekommst, wer ich bin.
 
@@ -21,7 +23,7 @@ Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben m
     </p>
   </PuzzleSection>
 
-  <PuzzleSection title="Moje cele" image="/images/programmer-grinding.png" reverse={true}>
+  <PuzzleSection title={t('goals')} image="/images/gaining-experience.png" reverse={true} layout="image-heavy">
 <p>
   Im Leben setze ich auf Präzision. Ich konzentriere mich auf ausgewählte Technologien, die ich für besonders wertvoll und zugleich zukunftsorientiert halte.
 </p>
@@ -33,7 +35,7 @@ Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben m
 </ul>
   </PuzzleSection>
 
-  <PuzzleSection title="Doświadczenie" image="/images/programmer-grinding.png">
+  <PuzzleSection title={t('experience')} images={["/images/devops.png", "/images/backend.png", "/images/frontend.png"]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
   <TimelineItem 

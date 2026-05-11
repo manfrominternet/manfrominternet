@@ -2,8 +2,10 @@
 import { getEntry, render } from 'astro:content';
 import MainLayout from './../layouts/MainLayout.astro';
 import PuzzleSection from './../components/PuzzleSection.astro';
-import TimelineItem from './../components/TimelineItem.astro'; // <--- DODANO IMPORT
-
+import TimelineItem from './../components/TimelineItem.astro'; 
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const entry = await getEntry('docs', 'en');
 if (!entry) return Astro.redirect('/404');
 const { Content, headings } = await render(entry);
@@ -11,7 +13,7 @@ const { Content, headings } = await render(entry);
 
 <MainLayout title={entry.data.title} headings={headings}>
   
-  <PuzzleSection title="O mnie" image="/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image="/images/programmer-grinding.png" layout="stacked">
     <p>
 I started my journey in IT back in 2018... but first, a bit about me — so you can get a sense of who I am and how I think.
 
@@ -34,7 +36,7 @@ I’m an open-minded, confident, and ambitious person; I’m motivated by challe
 
 </div>
 
-  <PuzzleSection title="Moje cele" image="/images/gaining-experience.png" reverse={true} layout="image-heavy">
+  <PuzzleSection title={t('goals')} image="/images/gaining-experience.png" reverse={true} layout="image-heavy">
   <p>
   In life, I value precision. I focus on learning carefully selected technologies that I consider both highly valuable and forward-looking.
 </p>
@@ -59,7 +61,7 @@ I’m an open-minded, confident, and ambitious person; I’m motivated by challe
 
 </div>
 
-  <PuzzleSection title="Doświadczenie" images={["/images/devops.png", "/images/backend.png", "/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={["/images/devops.png", "/images/backend.png", "/images/frontend.png"]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
 <TimelineItem 

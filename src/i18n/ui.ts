@@ -1,25 +1,38 @@
-export const languages = {
-  en: "English",
-  pl: "Polski",
-  de: "Deutsch",
-  ru: "Русский",
-};
-
 export const ui = {
   en: {
-    "nav.home": "Home",
+    home: "Home",
+    about: "About Me",
+    goals: "My Goals",
+    experience: "Experience",
+    techstack: "Technical Skills",
+    techstackSub: "Expertise & Tools",
     welcome: "Welcome to our site!",
   },
   pl: {
-    "nav.home": "Strona główna",
+    home: "Strona główna",
+    about: "O mnie",
+    goals: "Moje cele",
+    experience: "Doświadczenie",
+    techstack: "Umiejętności techniczne",
+    techstackSub: "Ekspertyza i Narzędzia",
     welcome: "Witaj na naszej stronie!",
   },
   de: {
-    "nav.home": "Startseite",
-    welcome: "Willkommen na naszej stronie!",
+    home: "Startseite",
+    about: "Über mich",
+    goals: "Meine Ziele",
+    experience: "Erfahrung",
+    techstack: "Technische Fähigkeiten",
+    techstackSub: "Expertise & Werkzeuge",
+    welcome: "Willkommen auf unserer Website!",
   },
   ru: {
-    "nav.home": "Главная",
+    home: "Главная",
+    about: "Обо мне",
+    goals: "Мои цели",
+    experience: "Опыт работы",
+    techstack: "Технические навыки",
+    techstackSub: "Знания и Инструменты",
     welcome: "Добро пожаловать!",
   },
 } as const;

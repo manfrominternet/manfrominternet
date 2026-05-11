@@ -1,4 +1,4 @@
-import { ui, languages } from "./ui";
+import { ui } from "./ui";
 
 const defaultLang = "en";
 
