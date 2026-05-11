@@ -1,16 +1,12 @@
 ---
-title: "De"
-description: "De"
+title: "de"
+description: "de"
 ---
 
-# Pierwszy nagłówek
+# Über mich
 
-To jest treść Twojej strony. Możesz tutaj pisać normalnie.
+# Meine Ziele
 
-## Druga sekcja
+# Erfahrung
 
-Kiedy dodasz taki nagłówek, Astro automatycznie wrzuci go do spisu treści.
-
-### Podsekcja
-
-Markdown jest super prosty do edycji tekstu.
+# Techstack

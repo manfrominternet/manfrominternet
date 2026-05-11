@@ -1,16 +1,13 @@
 ---
-title: "Eng"
-description: "Eng"
+title: "en"
+description: "en"
 ---
 
-# Pierwszy nagłówek
 
-To jest treść Twojej strony. Możesz tutaj pisać normalnie.
+# About Me
 
-## Druga sekcja
+# My Goals
 
-Kiedy dodasz taki nagłówek, Astro automatycznie wrzuci go do spisu treści.
+# Experience
 
-### Podsekcja
-
-Markdown jest super prosty do edycji tekstu.
+# Techstack

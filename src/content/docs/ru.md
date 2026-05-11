@@ -1,16 +1,13 @@
 ---
-title: "Ru"
-description: "Ru"
+title: "ru"
+description: "ru"
 ---
 
-# Pierwszy nagłówek
 
-To jest treść Twojej strony. Możesz tutaj pisać normalnie.
+# Обо мне
 
-## Druga sekcja
+# Мои цели
 
-Kiedy dodasz taki nagłówek, Astro automatycznie wrzuci go do spisu treści.
+# Опыт работы
 
-### Podsekcja
-
-Markdown jest super prosty do edycji tekstu.
+# Techstack

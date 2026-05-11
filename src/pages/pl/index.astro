@@ -4,7 +4,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import PuzzleSection from '../../components/PuzzleSection.astro';
 import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-const entry = await getEntry('docs', 'ru');
+const entry = await getEntry('docs', 'pl');
 if (!entry) return Astro.redirect('/404');
 const { Content, headings } = await render(entry);
 const lang = getLangFromUrl(Astro.url);
