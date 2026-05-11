@@ -43,25 +43,95 @@ import SkillBar from '../components/SkillBar.astro';
       <!-- Główna Treść -->
       <main class="flex-1">
         <slot />
-        <section id="techstack" class="py-24 mt-20 border-t-2 border-slate-50" >
-          <div class="mb-16">
-            <h2 href="techstack" class="text-3xl font-black text-slate-900 mb-2">Technical Skills</h2>
-            <p class="text-blue-600 font-bold text-sm uppercase tracking-widest">Expertise & Tools</p>
-          </div>
+---
+import SkillBar from './SkillBar.astro';
+---
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
-            <div class="space-y-6">
-              <SkillBar name="Astro 5.0" level="95%" color="bg-orange-500" />
-              <SkillBar name="TypeScript" level="85%" color="bg-blue-500" />
-              <SkillBar name="Tailwind CSS" level="98%" color="bg-cyan-400" />
-            </div>
-            <div class="space-y-6">
-              <SkillBar name="Node.js & Express" level="70%" color="bg-green-600" />
-              <SkillBar name="GitHub / CI/CD" level="80%" color="bg-slate-800" />
-              <SkillBar name="UI Design (Figma)" level="75%" color="bg-purple-500" />
-            </div>
-          </div>
-        </section>
+<section id="techstack" class="py-20 border-t border-slate-100 overflow-hidden">
+  <!-- Header -->
+  <div class="mb-12 px-4">
+    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">Technical Skills</h2>
+    <p class="text-blue-600 font-bold uppercase tracking-widest text-xs">Expertise & Tools</p>
+  </div>
+
+  <div class="space-y-12 px-4">
+    
+    <!-- 1. PROGRESS BARS (Compressed Gaps) -->
+    <div class="max-w-6xl">
+      <h3 class="text-base font-bold text-slate-800 mb-6 uppercase tracking-wider border-b pb-2 border-slate-50">Core Stack & Languages</h3>
+      <!-- Zmniejszony gap-x z 16 na 8, aby uniknąć overflow na mniejszych laptopach -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+        <div class="space-y-5">
+          <SkillBar name="Astro 5.0" level="95%" color="bg-orange-500" />
+          <SkillBar name="TypeScript" level="85%" color="bg-blue-500" />
+          <SkillBar name="Tailwind CSS" level="98%" color="bg-cyan-400" />
+          <SkillBar name="Polish (Native)" level="100%" color="bg-red-500" />
+        </div>
+        <div class="space-y-5">
+          <SkillBar name="Node.js & Express" level="70%" color="bg-green-600" />
+          <SkillBar name="GitHub / CI/CD" level="80%" color="bg-slate-800" />
+          <SkillBar name="English (C1)" level="90%" color="bg-blue-600" />
+          <SkillBar name="German (C1)" level="90%" color="bg-yellow-500" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TAGS SECTIONS (Flex-wrap with limited width) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-full">
+      
+      <!-- Group 1 -->
+      <div class="min-w-0">
+        <h4 class="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mb-4">Programming</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {["JavaScript", "HTML5", "Python", "Rust", "Bash", "JSON", "YAML"].map(item => (
+            <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-md border border-slate-200 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Group 2 -->
+      <div class="min-w-0">
+        <h4 class="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mb-4">Frontend & UI</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {["ReactJS", "Redux", "NextJS", "CSS3", "Styled Comp.", "MUI", "AG Grid", "ShadCN"].map(item => (
+            <span class="px-2.5 py-1 bg-blue-50/50 text-blue-700 text-xs font-medium rounded-md border border-blue-100 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Group 3 -->
+      <div class="min-w-0">
+        <h4 class="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mb-4">DevOps & Cloud</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {["Git", "Docker", "K8s", "Ansible", "Jenkins", "Linux", "Netlify", "Vercel"].map(item => (
+            <span class="px-2.5 py-1 bg-slate-800 text-slate-100 text-xs font-medium rounded-md whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Group 4 -->
+      <div class="min-w-0">
+        <h4 class="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mb-4">Backend & DB</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {["SQL", "MongoDB", "GraphQL", "REST", "Maven", "Flyway"].map(item => (
+            <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-md border border-slate-200 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+       <!-- Group 5 -->
+       <div class="min-w-0">
+        <h4 class="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mb-4">Other Languages</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {["Russian (Conv.)", "Arabic (A1)"].map(item => (
+            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-md border border-emerald-100 whitespace-nowrap">{item}</span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       </main>
     </div>
 
