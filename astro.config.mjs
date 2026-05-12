@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://manfrominternet.github.io',
+  site: 'https://manfrominternet/list_motywacyjny.github.io',
   i18n: {
     defaultLocale: 'en',
     base: '/list_motywacyjny',
