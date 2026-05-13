@@ -1,9 +1,9 @@
 ---
 import { getEntry, render } from 'astro:content';
-import MainLayout from '../../layouts/MainLayout.astro';
-import PuzzleSection from '../../components/PuzzleSection.astro';
-import TimelineItem from '../../components/TimelineItem.astro'; // <--- DODANO IMPORT
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import MainLayout from '/src/layouts/MainLayout.astro';
+import PuzzleSection from '/src/components/PuzzleSection.astro';
+import TimelineItem from '/src/components/TimelineItem.astro'; 
+import { getLangFromUrl, useTranslations } from '/src/i18n/utils';
 const entry = await getEntry('docs', 'de');
 if (!entry) return Astro.redirect('/404');
 const { Content, headings } = await render(entry);
