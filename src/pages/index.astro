@@ -2,7 +2,7 @@
 import { getEntry, render } from 'astro:content';
 import MainLayout from '/src/layouts/MainLayout.astro';
 import PuzzleSection from '/src/components/PuzzleSection.astro';
-import TimelineItem from '/src/components/TimelineItem.astro'; 
+import tli from '/src/components/tli.astro'; 
 import { getLangFromUrl, useTranslations } from '/src/i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -59,25 +59,25 @@ const { Content, headings } = await render(entry);
   <PuzzleSection title={t('experience')} images={["/images/devops.png", "/images/backend.png", "/images/frontend.png"]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
-<TimelineItem 
+<tli 
   date="2026[October] - Present"
   title="DevOps (German-speaking)"
   company="Capgemini"
   description="Working on a project"
 />
-<TimelineItem 
+<tli 
   date="2025[October] - 2026[March]"
   title="DevOps Intern"
   company="Capgemini"
   description="Preparation by Capgemini for future DevOps projects"
 />
-<TimelineItem 
+<tli 
   date="2025[March] - 2025[September]"
   title="Fullstack Developer"
   company="Freelance"
   description="Building an MVP — a recruitment platform with quizzes for candidates"
 />
-<TimelineItem 
+<tli 
   date="2022[May] - 2024[April]"
   title="Frontend Developer"
   company="Thales"
