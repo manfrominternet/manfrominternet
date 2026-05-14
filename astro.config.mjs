@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://manfrominternet.github.io',
   i18n: {
     defaultLocale: 'en',
-    base: '/',
+    base: '/manfrominternet',
     locales: ['pl', 'en', 'de', 'ru'],
     routing: {
       prefixDefaultLocale: false
