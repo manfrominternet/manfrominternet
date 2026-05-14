@@ -8,7 +8,7 @@ import imgExperience from '/src/assets/images/gaining-experience.png';
 import { getEntry, render } from 'astro:content';
 import MainLayout from '/src/layouts/MainLayout.astro';
 import PuzzleSection from '/src/components/PuzzleSection.astro';
-import tli from '/src/components/tli.astro'; 
+import Tli from '/src/components/Tli.astro'; 
 import { getLangFromUrl, useTranslations } from '/src/i18n/utils';
 const entry = await getEntry('docs', 'de');
 if (!entry) return Astro.redirect('/404');
@@ -44,25 +44,25 @@ Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben m
   <PuzzleSection title={t('experience')} images={[imgDevops.src, imgBackend.src, imgFrontend.src]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
-  <tli 
+  <Tli 
   date="2026[Oktober] - heute"
   title="DevOps (mit Deutsch)"
   company="Capgemini"
   description="Arbeit in einem Projekt"
 />
-<tli 
+<Tli 
   date="2025[Oktober] - 2026[März]"
   title="DevOps Praktikum"
   company="Capgemini"
   description="Vorbereitung durch Capgemini auf zukünftige DevOps-Projekte"
 />
-<tli 
+<Tli 
   date="2025[März] - 2025[September]"
   title="Fullstack Developer"
   company="Freelance"
   description="Entwicklung eines MVP — einer Recruiting-Plattform mit Quizzen für Kandidaten"
 />
-<tli 
+<Tli 
   date="2022[Mai] - 2024[April]"
   title="Frontend Developer"
   company="Thales"
