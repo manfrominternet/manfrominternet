@@ -12,7 +12,7 @@ const { Content, headings } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
-  <PuzzleSection title={t('about')} image="/public/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image="/src/assets/images/programmer-grinding.png" layout="stacked">
     <p>
     {t("about_section")}
     </p>
@@ -31,7 +31,7 @@ const { Content, headings } = await render(entry);
 
 </div>
 
-  <PuzzleSection title={t('goals')} image="/public/images/gaining-experience.png" reverse={true} layout="image-heavy">
+  <PuzzleSection title={t('goals')} image="/src/assets/images/gaining-experience.png" reverse={true} layout="image-heavy">
   <p>
   {t('goals_section')}
 </p>
@@ -56,7 +56,7 @@ const { Content, headings } = await render(entry);
 
 </div>
 
-  <PuzzleSection title={t('experience')} images={["/public/images/devops.png", "/public/images/backend.png", "/public/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={["/src/assets/images/devops.png", "/src/assets/images/backend.png", "/src/assets/images/frontend.png"]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
 <tli 
