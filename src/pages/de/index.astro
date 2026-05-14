@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 
 <MainLayout title={entry.data.title} headings={headings}>
   
-  <PuzzleSection title={t('about')} image="/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image="/public/images/programmer-grinding.png" layout="stacked">
     <p>
 Meine ersten Schritte in der IT habe ich bereits im Jahr 2018 gemacht... aber zuerst ein paar Worte über mich, damit du ein Gefühl dafür bekommst, wer ich bin.
 
@@ -23,7 +23,7 @@ Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben m
     </p>
   </PuzzleSection>
 
-  <PuzzleSection title={t('goals')} image="/images/gaining-experience.png" reverse={true} layout="image-heavy">
+  <PuzzleSection title={t('goals')} image="/public/images/gaining-experience.png" reverse={true} layout="image-heavy">
 <p>
   Im Leben setze ich auf Präzision. Ich konzentriere mich auf ausgewählte Technologien, die ich für besonders wertvoll und zugleich zukunftsorientiert halte.
 </p>
@@ -35,7 +35,7 @@ Ich bin eine offene, selbstbewusste und ehrgeizige Person; schwierige Aufgaben m
 </ul>
   </PuzzleSection>
 
-  <PuzzleSection title={t('experience')} images={["/images/devops.png", "/images/backend.png", "/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={["/public/images/devops.png", "/public/images/backend.png", "/public/images/frontend.png"]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
   <tli 
