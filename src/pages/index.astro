@@ -37,7 +37,7 @@ const { Content, headings } = await render(entry);
 
 </div>
 
-  <PuzzleSection title={t('goals')} image="/src/assets/images/gaining-experience.png" reverse={true} layout="image-heavy">
+  <PuzzleSection title={t('goals')} image={imgExperience .src}  reverse={true} layout="image-heavy">
   <p>
   {t('goals_section')}
 </p>
@@ -62,7 +62,7 @@ const { Content, headings } = await render(entry);
 
 </div>
 
-  <PuzzleSection title={t('experience')} images={["/src/assets/images/devops.png", "/src/assets/images/backend.png", "/src/assets/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={[imgDevops.src, imgBackend.src, imgFrontend.src]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
 <tli 

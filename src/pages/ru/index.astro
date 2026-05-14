@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 
 <MainLayout title={entry.data.title} headings={headings}>
   
-  <PuzzleSection title={t('about')} image="/src/assets/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image={imgProgrammerGrinding.src} layout="stacked">
     <p>
 Первые шаги в IT я начал делать уже в 2018 году... но сначала немного обо мне, чтобы ты мог лучше понять, какой я человек.
 
@@ -23,7 +23,7 @@ const t = useTranslations(lang);
     </p>
   </PuzzleSection>
 
-    <PuzzleSection title={t('goals')} image="/src/assets/images/gaining-experience.png" reverse={true} layout="image-heavy">
+    <PuzzleSection title={t('goals')} image={imgExperience .src}  reverse={true} layout="image-heavy">
 <p>
   В жизни я делаю ставку на точность. Я сосредотачиваюсь на изучении отобранных технологий, которые считаю наиболее ценными и перспективными.
 </p>
@@ -35,7 +35,7 @@ const t = useTranslations(lang);
 </ul>
   </PuzzleSection>
 
-  <PuzzleSection title={t('experience')} images={["/src/assets/images/devops.png", "/src/assets/images/backend.png", "/src/assets/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={[imgDevops.src, imgBackend.src, imgFrontend.src]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
 <tli 

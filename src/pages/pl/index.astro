@@ -1,4 +1,10 @@
 ---
+import imgBackend from '/src/assets/images/backend.png';
+import imgDevops from '/src/assets/images/devops.png';
+import imgFrontend from '/src/assets/images/frontend.png';
+import imgProgrammerGrinding from '/src/assets/images/programmer-grinding.png';
+import imgLearningTech from '/src/assets/images/learning-technologies.png';
+import imgExperience from '/src/assets/images/gaining-experience.png';
 import { getEntry, render } from 'astro:content';
 import MainLayout from '/src/layouts/MainLayout.astro';
 import PuzzleSection from '/src/components/PuzzleSection.astro';
@@ -13,7 +19,7 @@ const t = useTranslations(lang);
 
 <MainLayout title={entry.data.title} headings={headings}>
   
-  <PuzzleSection title={t('about')} image="/src/assets/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image={imgProgrammerGrinding.src} layout="stacked">
     <p>
 Pierwsze kroki w IT zacząłem stawiać już w 2018 roku... ale najpierw trochę o mnie, żebyśmy poczuli, że już trochę się znamy i że nadajemy na tych samych falach.
 
@@ -23,7 +29,7 @@ Jestem osobą otwartą, pewną siebie i ambitną; motywują mnie trudne zadania 
     </p>
   </PuzzleSection>
 
-  <PuzzleSection title={t('goals')} image="/src/assets/images/gaining-experience.png" reverse={true} layout="image-heavy">
+  <PuzzleSection title={t('goals')} image={imgExperience .src}  reverse={true} layout="image-heavy">
     <p>
   W życiu stawiam na precyzję. Skupiam się na nauce wybranych technologii, które uważam za najbardziej wartościowe, a jednocześnie świeże i przyszłościowe.
 </p>
@@ -35,7 +41,7 @@ Jestem osobą otwartą, pewną siebie i ambitną; motywują mnie trudne zadania 
 </ul>
   </PuzzleSection>
 
-  <PuzzleSection title={t('experience')} images={["/src/assets/images/devops.png", "/src/assets/images/backend.png", "/src/assets/images/frontend.png"]}>
+  <PuzzleSection title={t('experience')} images={[imgDevops.src, imgBackend.src, imgFrontend.src]}>
     <!-- Tutaj wstawiamy Timeline zamiast zwykłego <p> -->
     <div class="mt-6">
         <tli 
