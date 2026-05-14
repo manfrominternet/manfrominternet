@@ -1,4 +1,10 @@
 ---
+import imgBackend from '/src/assets/images/backend.png';
+import imgDevops from '/src/assets/images/devops.png';
+import imgFrontend from '/src/assets/images/frontend.png';
+import imgProgrammerGrinding from '/src/assets/images/programmer-grinding.png';
+import imgLearningTech from '/src/assets/images/learning-technologies.png';
+import imgExperience from '/src/assets/images/gaining-experience.png';
 import { getEntry, render } from 'astro:content';
 import MainLayout from '/src/layouts/MainLayout.astro';
 import PuzzleSection from '/src/components/PuzzleSection.astro';
@@ -12,7 +18,7 @@ const { Content, headings } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title} headings={headings}>
-  <PuzzleSection title={t('about')} image="/src/assets/images/programmer-grinding.png" layout="stacked">
+  <PuzzleSection title={t('about')} image={imgProgrammerGrinding.src} layout="stacked">
     <p>
     {t("about_section")}
     </p>
