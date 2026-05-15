@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# Hi there! / Hallo! / Cześć! / Привет! 👋
 
-```sh
-npm create astro@latest -- --template minimal
-```
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🇬🇧 English
 
-## 🚀 Project Structure
+Welcome to my GitHub! Here you can see my code, but if you want to know more about me, see my full portfolio, and check out live projects, visit my website:
 
-Inside of your Astro project, you'll see the following folders and files:
+👉 **[manfrominternet.github.io/manfrominternet](https://manfrominternet.github.io/manfrominternet/)** 👈
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### 💻 What I do
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+* **Software Development:** I focus primarily on developing software using **JavaScript**, **TypeScript**, **React**, **Rust**, and **AI** technologies.
+* **Databases & Deployment:** I build projects integrated with various databases and handle full deployment using **Kubernetes**, **Terraform**, and **Cloud Providers**.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🇩🇪 Deutsch
 
-## 🧞 Commands
+Willkommen auf meinem GitHub-Profil! Hier findest du meinen Code. Wenn du mehr über mich erfahren, mein vollständiges Portfolio einsehen und Live-Projekte sehen möchtest, besuche meine Website:
 
-All commands are run from the root of the project, from a terminal:
+👉 **[manfrominternet.github.io/manfrominternet](https://manfrominternet.github.io/manfrominternet/)** 👈
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 💻 Was ich mache
 
-## 👀 Want to learn more?
+* **Softwareentwicklung:** Ich konzentriere mich hauptsächlich auf die Softwareentwicklung mit den Technologien **JavaScript**, **TypeScript**, **React**, **Rust** und **AI**.
+* **Datenbanken & Deployment:** Ich erstelle Projekte, die in verschiedene Datenbanken integriert sind, und übernehme das vollständige Deployment mithilfe von **Kubernetes**, **Terraform** und **Cloud-Providern**.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🇵🇱 Polski
+
+Cześć na moim GitHubie! Tutaj zobaczysz mój kod, ale jeśli chcesz poznać mnie lepiej, zobaczyć moje pełne portfolio i projekty live, zapraszam na moją stronę internetową:
+
+👉 **[manfrominternet.github.io/manfrominternet](https://manfrominternet.github.io/manfrominternet/)** 👈
+
+### 💻 Czym się zajmuję
+
+* **Rozwój oprogramowania:** Koncentruję się głównie na tworzeniu aplikacji z użyciem technologii **JavaScript**, **TypeScript**, **React**, **Rust** oraz **AI**.
+* **Bazy danych i wdrożenia:** Tworzę projekty współpracujące z różnymi bazami danych oraz samodzielnie realizuję deployment, wykorzystując **Kubernetes**, **Terraform** i dostawców chmurowych (**Cloud Providers**).
+
+---
+
+## 🇷🇺 Русский
+
+Приветствую в моём профиле GitHub! Здесь вы можете увидеть мой код, но если вы хотите узнать обо мне больше, посмотреть полное портфолио и живые проекты, добро пожаловать на мой сайт:
+
+👉 **[manfrominternet.github.io/manfrominternet](https://manfrominternet.github.io/manfrominternet/)** 👈
+
+### 💻 Чем я занимаюсь
+
+* **Разработка ПО:** В основном я фокусируюсь на разработке программного обеспечения с использованием технологий **JavaScript**, **TypeScript**, **React**, **Rust** и **AI**.
+* **Базы данных и деплой:** Я создаю проекты, работающие с различными базами данных, и самостоятельно занимаюсь развёртыванием (деплоем) инфраструктуры, используя **Kubernetes**, **Terraform** и облачных провайдеров (**Cloud Providers**).
